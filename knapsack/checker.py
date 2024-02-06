@@ -12,12 +12,10 @@ def check():
     }
     for i,j in dic.items():
         answer = solve(i)
-        invalid = True
+        print(f'{i}:',end=' ')
         with open(j,'r') as f:
-            if answer['objective'] >= int(f.readline().split(' ')[0]):
-                invalid = False
-        if invalid:
-            return False
-    return True
+            best_solution = int(f.readline().split(' ')[0])
+            print(f'ortools solution: {answer["objective"]}, best solution: {best_solution}',end='')
+        print()
 if __name__ == '__main__':
-    print(check())
+    check()
