@@ -4,7 +4,7 @@ from ortools.sat.python import cp_model
 import numpy as np
 def solve(filename):
     with open(filename,'r') as f:
-        n,K = map(int,f.readline().split(' '))
+        n,K = map(int,f.readline().strip().split(' '))
         v = np.zeros(n).astype(np.int64)
         w = np.zeros(n).astype(np.int64)
         x = []
