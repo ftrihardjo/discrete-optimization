@@ -12,7 +12,7 @@ def check():
     }
     for i,j in dic.items():
         answer = solve(i)
-        print(f'{i}:',end=' ')
+        print(f'file {i}:',end=' ')
         with open(j,'r') as f:
             best_solution = int(f.readline().split(' ')[0])
             print(f'ortools solution: {answer["objective"]}, best solution: {best_solution}',end='')
