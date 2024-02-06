@@ -5,8 +5,8 @@ import numpy as np
 def solve(filename):
     with open(filename,'r') as f:
         n,K = map(int,f.readline().split(' '))
-        v = np.zeros(n)
-        w = np.zeros(n)
+        v = np.zeros(n).astype(np.int64)
+        w = np.zeros(n).astype(np.int64)
         x = []
         model = cp_model.CpModel()
         for i in range(n):
