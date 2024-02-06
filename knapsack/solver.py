@@ -10,7 +10,7 @@ def solve(filename):
         x = []
         model = cp_model.CpModel()
         for i in range(n):
-            v[i],w[i] = map(int,f.readline().split(' '))
+            v[i],w[i] = map(int,f.readline().strip().split(' '))
             x.append(model.NewBoolVar(f'x{i}'))
         model.Add(np.dot(x,w) <= K)
         model.Maximize(np.dot(x,v))
